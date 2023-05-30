@@ -10,7 +10,7 @@ class MyHeap:
             self.last += 1
             self.array[self.last] = value
 
-            self.check_after_add(self.last)
+            self._check_after_add(self.last)
 
     def remove(self):
         if self.last != 0:
@@ -23,10 +23,11 @@ class MyHeap:
 
             self.last -= 1
 
-            self.check_after_remove(1)
+            self._check_after_remove(1)
             return removed
 
-    def check_after_add(self, i) -> None:
+
+    def _check_after_add(self, i) -> None:
         if i==1:
             return
         
@@ -35,10 +36,10 @@ class MyHeap:
         parent = self.array[i//2]
         if me > parent:
             self.array[i], self.array[i//2] = parent, me
-            self.check_after_add(i//2)
+            self._check_after_add(i//2)
 
 
-    def check_after_remove(self, i):
+    def _check_after_remove(self, i):
         if 2*i > self.last:
             return
 
@@ -55,14 +56,17 @@ class MyHeap:
 
         if maxch > me:
             self.array[i], self.array[idx] = maxch, me
-            self.check_after_remove(idx)
+            self._check_after_remove(idx)
 
 
 if __name__ == '__main__':
     heap_size = 10
-    q = 3
 
     h = MyHeap(heap_size)
-    h.add(q)
-    h.remove()
+    h.add(3)
+    h.add(5)
+    h.add(1)
+    # 最大値を取り出す
+    print(h.remove())
+    print(h.remove())
 
