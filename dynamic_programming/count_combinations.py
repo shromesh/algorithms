@@ -1,3 +1,6 @@
+# 個の方法では空間計算量が規定値を超えてしまう...
+
+
 from pprint import pprint
 from math import factorial
 
