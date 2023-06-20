@@ -1,6 +1,6 @@
 # https://atcoder.jp/contests/dp/tasks/dp_m
 
-
+# なんかちがう
 
 
 def main(N, K, a):
