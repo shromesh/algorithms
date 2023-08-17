@@ -12,7 +12,7 @@ def roundrobin(*iterables):
             # Remove an exhausted iterator.
             iterators.popleft()
 
-# collenctions.Counterと同じ
+# collections.Counterと同じ
 def count_str(s):
     d = defaultdict(lambda: 0) 
     for k in s:
