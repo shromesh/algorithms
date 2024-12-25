@@ -3,6 +3,7 @@ import random
 
 ## asyncio.gather()
 ## test1を実行しawaitに到達するとtest2を実行し、その後、先にawaitが終わった方から結果を取得する。
+## タスクを同時に作成して実行し、完了を待つための新しい代替手段は ですasyncio.TaskGroup。TaskGroupは、サブタスクのネストをスケジュールするためのgather よりも強力な安全性保証を提供します。タスク (またはサブタスク、タスクによってスケジュールされたタスク) で例外が発生した場合、TaskGroup は残りのスケジュールされたタスクをキャンセルしますが、 gather はキャンセルしません。
 
 
 async def test1():
