@@ -1,6 +1,8 @@
 import asyncio
 import random
 
+## test1を実行し、awaitで待機している間にtest2を実行し、その後、先にawaitが終わった方から結果を取得する。
+
 
 async def test1():
     print("test1 start")
